@@ -1,3 +1,5 @@
+#!/home/gns3/virtualvenvs/nornir/bin/python
+
 from nornir import InitNornir
 from pprint import pprint
 from nornir.plugins.tasks import networking, text
