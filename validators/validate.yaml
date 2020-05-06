@@ -1,0 +1,9 @@
+---
+- get_facts:
+    os_version: 14.1R4.8
+
+- get_interfaces_ip:
+    em0.0:
+      ipv4:
+        10.1.1.1:
+          prefix_length: 24
