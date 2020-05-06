@@ -404,3 +404,5 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'pop'
 
 2020-05-06 20:57:13,095 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
+2020-05-06 21:21:39,965 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
+2020-05-06 21:23:13,582 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
