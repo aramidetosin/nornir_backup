@@ -308,3 +308,99 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: <function template_file at 0
 2020-05-06 12:56:24,943 -  nornir.core -     INFO -        run() - Running task 'push_config' with args {'template': 'system.j2'} on 2 hosts
 2020-05-06 12:57:32,439 -  nornir.core -     INFO -        run() - Running task 'push_config' with args {'template': 'all.j2'} on 2 hosts
 2020-05-06 16:46:12,998 -  nornir.core -     INFO -        run() - Running task 'push_config' with args {'template': 'all.j2'} on 2 hosts
+2020-05-06 17:17:15,670 -  nornir.core -     INFO -        run() - Running task 'push_config' with args {'template': 'all.j2'} on 2 hosts
+2020-05-06 17:19:57,378 -  nornir.core -     INFO -        run() - Running task 'push_config' with args {'template': 'all.j2'} on 2 hosts
+2020-05-06 18:33:02,361 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
+2020-05-06 18:33:03,257 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 23, in _get_validation_file
+    with open(validation_file, "r") as stream:
+FileNotFoundError: [Errno 2] No such file or directory: '../validators/validate.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 29, in _get_validation_file
+    raise ValidationException("File {0} not found.".format(validation_file))
+napalm.base.exceptions.ValidationException: File ../validators/validate.yaml not found.
+
+2020-05-06 18:33:03,661 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 23, in _get_validation_file
+    with open(validation_file, "r") as stream:
+FileNotFoundError: [Errno 2] No such file or directory: '../validators/validate.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 189, in compliance_report
+    validation_source = _get_validation_file(validation_file)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 29, in _get_validation_file
+    raise ValidationException("File {0} not found.".format(validation_file))
+napalm.base.exceptions.ValidationException: File ../validators/validate.yaml not found.
+
+2020-05-06 18:33:40,646 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
+2020-05-06 18:33:42,621 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 200, in compliance_report
+    key = expected_results.pop("_name", "") or getter
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+2020-05-06 18:33:44,403 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 200, in compliance_report
+    key = expected_results.pop("_name", "") or getter
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+2020-05-06 18:35:17,093 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
+2020-05-06 18:35:18,568 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 200, in compliance_report
+    key = expected_results.pop("_name", "") or getter
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+2020-05-06 18:35:20,229 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_validate.py", line 29, in napalm_validate
+    validation_file=src, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/base.py", line 1676, in compliance_report
+    self, validation_file=validation_file, validation_source=validation_source
+  File "/home/gns3/virtualvenvs/nornir/lib/python3.6/site-packages/napalm/base/validate.py", line 200, in compliance_report
+    key = expected_results.pop("_name", "") or getter
+AttributeError: 'NoneType' object has no attribute 'pop'
+
+2020-05-06 20:57:13,095 -  nornir.core -     INFO -        run() - Running task 'napalm_validate' with args {'src': '../validators/validate.yaml'} on 2 hosts
