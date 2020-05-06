@@ -1,0 +1,42 @@
+system {
+    host-name {{host}};
+    root-authentication {
+        encrypted-password "$1$bx0shhcE$vTHkYxYueO0czFiVphL641"; ## SECRET-DATA
+    }
+    login {
+        class supervisor {
+            permissions all;
+            deny-commands "start shell";
+        }
+        user {{host.username}} {
+            authentication {
+                encrypted-password "$6$xtNXMYBSMkLYWPvq$2wrz3JcSaA.rFKOY66boZ3ubXtZcS5cYwBsA0xDWzf/3buUu7MQUAc9qI63QZGt.c4LGR.oRhX2xq2O3QAvnt."; ## SECRET-DATA
+            }
+        }
+        user salt {
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$1$uM13L/pG$OB.MfQgtOW17AD2D2Y2yR/"; ## SECRET-DATA
+            }
+        }
+    }
+    services {
+        ssh;
+        netconf {
+            ssh;
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+}
