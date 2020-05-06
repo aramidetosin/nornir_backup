@@ -30,6 +30,5 @@ def main():
     print_result(result)
     # print_result(result_facts)
 
-
 if __name__ == "__main__":
     main()
